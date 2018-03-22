@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>轮播图</title>
+
+
+<style type="text/css">
+        *{ padding:0; margin:0; list-style:none; border:0;}
+        .all{
+            width:1200px;
+            height:300px;
+            padding:7px;
+            margin:100px auto;
+            position:relative;
+        }
+        .screen{
+            width:634px;
+            height:334px;
+            overflow:hidden;
+            position:relative;
+            border: 1px solid red;
+        }
+        .screen li img {width: 160px;height: 160px;display: block;}
+        .screen li{ width:215px; height:300px; overflow:hidden; float:left;}
+        .screen ul{ position:absolute; left:0; top:0px; width:1720px;}
+        .all ol{ position:absolute; right:10px; bottom:10px; line-height:20px; text-align:center;}
+        .all ol li{ float:left; width:20px; height:20px; background:#fff; border:1px solid #ccc; margin-left:10px; cursor:pointer;}
+        .all ol li.current{ background:yellow;}
+
+        /*#arr {display: none;}*/
+        #arr span{ width:40px; height:40px; position:absolute; left:5px; top:50%; margin-top:-20px; background:#000; cursor:pointer; line-height:40px; text-align:center; font-weight:bold; font-family:'黑体'; font-size:30px; color:#fff; opacity:0.3; border:1px solid #fff;}
+        #arr #right{right:5px; left:auto;}
+
+    </style>
+
+<script type="text/javascript">
+var timeCount = 0;//计时, 
+var imgIndex = 0;//图片地址数组下标.
+var imgs = new Array();
+var time = null;
+
+imgs[0]="/images/photo.jpg";
+imgs[1]="/images/photo1.jpg";
+imgs[2]="/images/photo2.jpg";
+imgs[3]="/images/photo3.jpg";
+imgs[4]="/images/photo4.jpg";
+
+
+function get(){}
+
+
+function setImg() {
+	//取链表第一个元素的value赋给img
+	//doc
+	//var img = document.getElementById("checkCode");
+	//img.src = "${pageContext.request.contextPath}/checkImg?time="+ new Date().getTime();
+	
+	var img = document.getElementById("img");
+	img.src = imgs[imgIndex++];
+	imgIndex = imgIndex % imgs.length;
+	
+	console.log("5s");
+	//console.log(img)
+	//test();
+	
+	//checkForm();
+	
+
+}
+
+//javascript更换图片,
+function countTime(){//每隔t秒,更换一次图片(调用setImg(),
+	timeCount+=1;
+	console.log("1s");
+	if(timeCount >= 5){
+		timeCount = 0;//归零,
+		setImg();
+	}
+	time=setTimeout("countTime()",1000)//递归调用
+}
+
+</script>
+</head>
+<body onload = "countTime()">
+<div style="width:634px;height:320;border: 1px solid red;">
+	<img id="img" alt="img" src="" width="634px" height="340px" />
+	<ol><li>1</li><li>2</li><li>3</li><li>4</li></ol>
+</div>
+
+<a onclick="countTime()">6666</a>
+
+
+</body>
+</html>

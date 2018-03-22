@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+#head{
+		 width : 100%;
+         height: 52px;/*head 高度*/
+         background-color: #fff;
+		 position:fixed;/*绝对定位(相对于浏览器)*/
+		 left:0px;/*绝对定位*/
+		 right:0px;/*/绝对定位*/
+		 top:0px;/*绝对定位*/
+		 margin:0 auto;/*/div居中*/
+		 text-align:center;/*/内容居中*/
+		 /*
+		 效果是达到了, 可是有一部分元素被遮挡住了
+		 在下面添加一个 margin100px的div 把其他元素挤下去.
+		 */
+	}
+	a {
+    color: inherit;
+    text-decoration: none;
+}
+	.l{
+		text-align:center;
+	}
+	#first{
+		margin: 100px;
+		padding: 0px;
+
+	}
+	#f{
+		float: right;
+		background-color: pink;
+	}
+	
+	.clear{
+	clear:both;
+	height:0;
+	line_height:0;
+	font-siez:0;
+	margin:0;
+	padding:0;
+	}
