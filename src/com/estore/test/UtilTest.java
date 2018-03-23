@@ -2,6 +2,7 @@ package com.estore.test;
 
 import java.math.BigInteger;
 import java.util.Date;
+import java.util.ResourceBundle;
 import java.util.Vector;
 
 import javax.mail.MessagingException;
@@ -45,13 +46,8 @@ public class UtilTest {
 	@Test
 
 	public void f2()  {
-		try {
-			MailUtils.sendMail("124797375@qq.com", "test","java mail test again");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			//System.out.println("chuzuol");
-			e.printStackTrace();
-		}
+		ResourceBundle r = ResourceBundle.getBundle("my");
+		System.out.println(r.getString("email"));
 	}
 
 	@Test

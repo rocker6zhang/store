@@ -1,5 +1,4 @@
-* [项目地址](http://47.104.191.132:8080/store/) 
-
+[项目地址](http://47.104.191.132:8080/store/) 
 ##项目目的
     java web 常用功能练习(不含框架)
 ##项目功能
@@ -29,4 +28,5 @@
     *  Eclipse2017+ Tomcat7.0 + JDK6 + linux windows
     *  MVC 模式 
     *  JavaEE 三层结构
+
 

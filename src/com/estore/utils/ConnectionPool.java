@@ -2,6 +2,7 @@ package com.estore.utils;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -74,18 +75,24 @@ public class ConnectionPool {
 
 class Connections { 
 	// JDBC 驱动器名称 和数据库地址
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	static  String JDBC_DRIVER ;  
 	//数据库的名称为 EXAMPLE
-	static final String DB_URL = "jdbc:mysql://localhost:3306/estore?user=root&password=zw246897";
+	static  String DB_URL;
 
 	//  数据库用户和密码
-	static final String USER = "root";
+	static  String USER ;
 
-	static final String PASS = "zw246897";
+	static  String PASS ;
 
 
 	public Connections() {
+		ResourceBundle r = ResourceBundle.getBundle("my");
+		JDBC_DRIVER = r.getString("JDBC_DRIVER");
+		DB_URL = r.getString("DB_URL");
+		USER = r.getString("USER");
+		PASS = r.getString("PASS");
 		try {
+			
 			//加载驱动
 			Class.forName(JDBC_DRIVER);
 		} catch (ClassNotFoundException e) {
@@ -96,7 +103,7 @@ class Connections {
 
 	//获得与数据库的连接
 	public static Connection getConnection() throws SQLException {
-		return DriverManager.getConnection(DB_URL);
+		return DriverManager.getConnection(DB_URL,USER,PASS);
 	}
 }
 

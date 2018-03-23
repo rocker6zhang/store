@@ -1,7 +1,9 @@
 package com.estore.utils;
 
+import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 import javax.sql.DataSource;
 
@@ -9,10 +11,25 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class DataSourceUtils {
 	//使用c3p0连接池
-	private static DataSource dataSource = new ComboPooledDataSource();
+	private static ComboPooledDataSource dataSource = new ComboPooledDataSource();
+	
 
 	//把连接放在 ThreadLocal 里,  以供 service层和dao公用 连接
 	private static final ThreadLocal<Connection> tl = new ThreadLocal<Connection>();
+	
+	static {
+		ResourceBundle r = ResourceBundle.getBundle("my");
+		try {
+			dataSource.setDriverClass(r.getString("JDBC_DRIVER"));
+			dataSource.setJdbcUrl(r.getString("DB_URL"));
+			dataSource.setUser(r.getString("USER"));
+			dataSource.setPassword(r.getString("PASS"));
+			
+		} catch (PropertyVetoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public static DataSource getDataSource() {
 		return dataSource;

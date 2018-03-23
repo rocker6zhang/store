@@ -41,13 +41,10 @@ public class AddProductServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String password = request.getParameter("password");
-		if(! "lanen2018".equals(password)) {
-			request.setAttribute("message", "口令错误");
-			request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
-			return;
-		}
+
+
+		String repassword = (String) request.getServletContext().getAttribute("addProduct_password");
+
 
 		// 用于封装所有请求参数
 		Map<String, String[]> map = new HashMap<String, String[]>();
@@ -73,7 +70,7 @@ public class AddProductServlet extends HttpServlet {
 			response.sendRedirect("http://www.estore.com");
 		}
 
-//		 upload.setSizeMax(1024*1024*10);//设置上传文件总大小
+		//		 upload.setSizeMax(1024*1024*10);//设置上传文件总大小
 		try {
 			//获得所有上传项目, 已经解析好,封装到FileItem中了, 每一个FileItem表示一个上传项
 			List<FileItem> items = upload.parseRequest(request);
@@ -95,16 +92,16 @@ public class AddProductServlet extends HttpServlet {
 						//没有图片文件
 						continue;
 					}
-					
+
 					//校验文件格式
 					int index = filename.lastIndexOf('.');
-					
-					
+
+
 					if(index == -1 || ".JPG .PNG .GIF".indexOf(filename.substring(index+1).toUpperCase()) == -1 ) {
 						//不是图片
 						continue;
 					}
-					
+
 
 					// 得到真实名称,去除路径
 					filename = UploadUtils.subFileName(filename);
@@ -138,7 +135,7 @@ public class AddProductServlet extends HttpServlet {
 
 					// 产生一个200*200的缩略图
 					putils.resize(200, 200);
-					
+
 					// 封装imgurl
 					map.put("imgurl", new String[] { "/upload" + uuidDir
 							+ "/" + uuidname });
@@ -148,22 +145,31 @@ public class AddProductServlet extends HttpServlet {
 				}
 			}
 
+
+			if(! repassword.equals(map.get("password")[0])) {
+				System.out.println(map.get("password")[0]);
+				request.setAttribute("message", "口令错误");
+				request.getRequestDispatcher("/addProduct.jsp").forward(request, response);
+				return;
+			}
+
+
 			// 使用BeanUtils将所有数据封装到Product
 			Product p = new Product();
 			BeanUtils.populate(p, map);
 
 			//校验数据
 			String message = p.check();
-			
-			if(message == null) {
-			// 调用service完成添加操作
-			ProductService service = new ProductService();
 
-		
-			service.addProduct(p);
-			
-			message = "商品 "+p.getName()+" 添加成功!";
-			System.out.println(p.getName());
+			if(message == null) {
+				// 调用service完成添加操作
+				ProductService service = new ProductService();
+
+
+				service.addProduct(p);
+
+				message = "商品 "+p.getName()+" 添加成功!";
+				System.out.println(p.getName());
 			}
 
 			// 跳转到addProduct.jsp
@@ -182,6 +188,6 @@ public class AddProductServlet extends HttpServlet {
 	}
 
 
-	
-	
+
+
 }
