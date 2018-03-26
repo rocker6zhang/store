@@ -16,17 +16,24 @@ import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
 
-
+/**
+ * 
+ * @ClassName: AddOrderServlet 
+ * @Description: TODO 添加订单
+ * @author: zw
+ * @date: 2018年3月26日 下午12:11:31
+ */
 public class AddOrderServlet extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//获取数据
 		String message = null;
-		request.setCharacterEncoding("UTF-8");
 		User user = (User)request.getSession().getAttribute("user");
 		String address = request.getParameter("address");
 		
-		
+		//校验数据
 		if(user == null){
 			//用户未登录,
 			request.setAttribute("jumpURL",request.getContextPath()+"/login.jsp");
@@ -35,15 +42,16 @@ public class AddOrderServlet extends HttpServlet {
 			request.getRequestDispatcher("/showMessage.jsp").forward(request, response);
 			return;
 		}
+		
+		//调用OrderService
 
 		//购物车
 		Map<Product, Integer> cart = (Map<Product, Integer>) request.getSession().getAttribute("cart");
-		//订单
+		//订单项
 		List<OrderItem> orderItems = new ArrayList<OrderItem>();
 		//封装订单信息,用户,地址
 		Order o = new Order();
 		o.setUser_id(user.getId());
-		//System.out.println(address);
 		o.setAddress(address);
 		
 		double total_price = 0;
@@ -73,7 +81,7 @@ public class AddOrderServlet extends HttpServlet {
 			//清空购物车
 			//remove product of the user cart 
 			for(Product p : cart.keySet()) {
-				//要多次访问数据库,  要修改成只访问一次,  传递给 OrderService 一个商品 id集合和用户id,, 将批量删除写在一条 sql语句中
+				//待修改----要多次访问数据库, 要修改成只访问一次,传递给 OrderService 一个商品 id集合和用户id,, 将批量删除写在一条 sql语句中
 				os.removeCartItem(o.getUser_id(), p);
 			}
 			cart.clear();

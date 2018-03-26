@@ -17,10 +17,14 @@ import com.estore.domain.OrderItem;
 import com.estore.domain.Product;
 import com.estore.service.OrderService;
 
-/*
- * 确认收货
+
+/**
  * 
- * */
+ * @ClassName: ReceiptServlet 
+ * @Description: TODO 确认收货
+ * @author: zw
+ * @date: 2018年3月26日 下午1:47:12
+ */
 public class ReceiptServlet extends HttpServlet {
 
 	

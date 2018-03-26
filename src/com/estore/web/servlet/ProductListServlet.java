@@ -32,10 +32,14 @@ import com.estore.utils.PicUtils;
 import com.estore.utils.UploadUtils;
 
 
+
 /**
- * 商品管理列表
  * 
- * */
+ * @ClassName: ProductListServlet 
+ * @Description: TODO 商品管理列表,对应商品管理页面
+ * @author: zw
+ * @date: 2018年3月26日 下午1:47:55
+ */
 public class ProductListServlet extends HttpServlet {
 
 	@Override
@@ -46,6 +50,7 @@ public class ProductListServlet extends HttpServlet {
 
 		List<Product> list;
 
+		//取30条商品
 		list = service.getProducts(30);
 		request.setAttribute("products",list);
 

@@ -20,22 +20,6 @@ public class TEST extends HttpServlet {
 		out.close();
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 	
 

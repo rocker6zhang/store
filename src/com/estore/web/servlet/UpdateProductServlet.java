@@ -15,8 +15,11 @@ import com.estore.service.ProductService;
 
 /**
  * 
- * 
- * */
+ * @ClassName: UpdateProductServlet 
+ * @Description: TODO 更新商品信息
+ * @author: zw
+ * @date: 2018年3月26日 下午1:37:57
+ */
 public class UpdateProductServlet extends HttpServlet {
 
 
@@ -46,6 +49,7 @@ public class UpdateProductServlet extends HttpServlet {
 			return;
 		}
 
+		//调用服务
 		ProductService ps = new ProductService();
 
 		msg = ps.updateProduct(p);

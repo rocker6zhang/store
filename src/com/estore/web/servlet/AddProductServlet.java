@@ -1,16 +1,12 @@
 package com.estore.web.servlet;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,26 +21,25 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
 
 import com.estore.domain.Product;
-import com.estore.domain.User;
 import com.estore.service.ProductService;
-import com.estore.service.UserService;
 import com.estore.utils.PicUtils;
 import com.estore.utils.UploadUtils;
 
-
 /**
  * 
- * 
- * */
+ * @ClassName: AddProductServlet 
+ * @Description: TODO 添加商品的前端控制类
+ * @author: zw
+ * @date: 2018年3月26日 下午12:08:23
+ */
 public class AddProductServlet extends HttpServlet {
 
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-
+		
 		String repassword = (String) request.getServletContext().getAttribute("addProduct_password");
-
 
 		// 用于封装所有请求参数
 		Map<String, String[]> map = new HashMap<String, String[]>();

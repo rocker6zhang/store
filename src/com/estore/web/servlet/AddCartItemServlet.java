@@ -20,11 +20,14 @@ import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
 
-/*
- * 购物车添加商品
- * 将用户的订单项保存在session中.!!(考虑优先保存在cookie中)
- * 以OrderItem对象封装订单项,保存于List中,然后存入session
- * */
+
+/**
+ * 
+ * @ClassName: AddCartItemServlet 
+ * @Description: TODO 添加商品到购物车
+ * @author: zw
+ * @date: 2018年3月26日 下午12:15:18
+ */
 public class AddCartItemServlet extends HttpServlet {
 	HttpServletRequest request;
 	HttpServletResponse response;

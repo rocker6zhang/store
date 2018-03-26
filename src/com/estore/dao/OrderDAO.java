@@ -1,13 +1,4 @@
-/*
- * 操作订单表
- * 
- * 功能:
- * 		提供添加订单的方法
- * 
- * 注意:
- * 		订单表的id是自动增长的,插入数据后要取得id. 
- * 		
- * */
+	
 
 package com.estore.dao;
 
@@ -30,7 +21,13 @@ import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.utils.DataSourceUtils;
 
-
+/**
+ * 
+ * @ClassName: OrderDAO 
+ * @Description: TODO 订单相关数据库操作的封装类, 对应order_表和orderItem和cart表.
+ * @author: zw
+ * @date: 2018年3月26日 下午2:02:46
+ */
 public class OrderDAO extends DAO {
 
 	public void addOrder(Order o) throws SQLException {

@@ -15,6 +15,13 @@ import com.estore.domain.User;
 import com.estore.service.UserService;
 import com.estore.dao.UserDAO;
 
+/**
+ * 
+ * @ClassName: RegisterServlet 
+ * @Description: TODO 用户注册
+ * @author: zw
+ * @date: 2018年3月26日 下午1:46:29
+ */
 public class RegisterServlet extends HttpServlet {
 
 	HttpServletRequest request; 

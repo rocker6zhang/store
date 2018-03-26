@@ -19,14 +19,16 @@ import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
 
-
+/**
+ * 
+ * @ClassName: GetOrderServlet 
+ * @Description: TODO 查看订单
+ * @author: zw
+ * @date: 2018年3月26日 下午1:28:55
+ */
 public class GetOrderServlet extends HttpServlet {
 
-	/*
-	 * 业务逻辑获得要删除订单项的商品id 遍历session中的list 删除订单项
-	 * 这里通过商品id确定一条订单项, 
-	 * 最后跳转回购物车页面
-	 * */
+	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String message = null;
@@ -41,15 +43,14 @@ public class GetOrderServlet extends HttpServlet {
 			return;
 		}
 		
+		
+		//调用查询服务
 		OrderService os = new OrderService();
 		List<Order> order = os.getOrder(user);
 		  for(Order o : order) {
 		   o.setOis(os.getOrderItems(o));
 		  }
 		request.getSession().setAttribute("orders",order);
-		
-//		System.out.println(orders);
-//		System.out.println(orders);
 		request.getRequestDispatcher("/showOrder.jsp").forward(request,response);
 	}
 }

@@ -34,8 +34,11 @@ import com.estore.utils.UploadUtils;
 
 /**
  * 
- * 
- * */
+ * @ClassName: RemoveProductServlet 
+ * @Description: TODO 删除商品
+ * @author: zw
+ * @date: 2018年3月26日 下午1:44:52
+ */
 public class RemoveProductServlet extends HttpServlet {
 
 	@Override

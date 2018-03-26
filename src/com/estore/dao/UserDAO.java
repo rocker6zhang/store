@@ -26,7 +26,13 @@ import java.sql.Timestamp;
 import com.estore.domain.User;
 import com.estore.utils.DataSourceUtils;
 
-
+/**
+ * 
+ * @ClassName: UserDAO 
+ * @Description: TODO user表的对应操作类
+ * @author: zw
+ * @date: 2018年3月26日 下午2:00:55
+ */
 public class UserDAO extends DAO {
 
 

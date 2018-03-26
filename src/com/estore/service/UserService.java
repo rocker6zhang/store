@@ -13,12 +13,22 @@ import com.estore.utils.MailUtils;
 
 
 /**
- * 用户业务逻辑处理,
- * 处理用户的注册/登录/信息加密(密码MD5)
  * 
- * */
+ * @ClassName: UserService 
+ * @Description: TODO user 业务逻辑处理.<br/> 处理用户的注册/登录/信息加密(密码MD5)
+ * @author: zw
+ * @date: 2018年3月26日 下午1:49:20
+ */
 public class UserService {
 
+	/**
+	 * 
+	* @Title: regist  
+	* @Description: TODO 注册
+	* @param @param u 用户
+	* @return String  为空表示正常.非空,其内容为注册错误报告, 
+	* @throws
+	 */
 	public String regist(User u) { 
 		String wrongMsg = null;
 		UserDAO userDAO = new UserDAO();
@@ -67,6 +77,14 @@ public class UserService {
 		return wrongMsg;
 	}
 
+	/**
+	 * 
+	* @Title: closeConnection  
+	* @Description: TODO 释放数据库连接池资源 
+	* @param     
+	* @return void 
+	* @throws
+	 */
 	private void closeConnection() {
 		// TODO Auto-generated method stub
 		try {
@@ -79,6 +97,16 @@ public class UserService {
 
 	}
 
+	/**
+	 * 
+	* @Title: sendEmail  
+	* @Description: TODO 发送激活邮件
+	* @param @param u
+	* @param @throws AddressException 如果邮件地址错误
+	* @param @throws MessagingException 如果发送失败
+	* @return void  
+	* @throws
+	 */
 	private void sendEmail(User u) throws AddressException, MessagingException {
 
 		String message = "你的注册激活码是:"+"<a href='http://47.104.191.132:8080/store/activeUser?"
@@ -90,8 +118,17 @@ public class UserService {
 
 	/**
 	 * 
-	 * 激活用户
+	 * 
 	 * */
+	/**
+	 * 
+	* @Title: active  
+	* @Description: TODO 激活用户 
+	* @param @param activeCode :激活码
+	* @param @return    设定文件  
+	* @return String    为空表示正常.非空,其内容为激活错误报告, 
+	* @throws
+	 */
 	public String active(String activeCode) {
 		// TODO Auto-generated method stub
 		String wrongMsg = null;
@@ -141,6 +178,13 @@ public class UserService {
 		return wrongMsg;
 	}
 
+	/**
+	* @Title: sendActiveEmail  
+	* @Description: TODO 发送激活邮件 
+	* @param @param u 用户 @see User  
+	* @return String    为空表示正常.非空,其内容为注册错误报告,  
+	* @throws
+	 */
 	public String sendActiveEmail(User u) {
 		String wrongMsg = null;
 		//检查用户是否存在
@@ -169,6 +213,15 @@ public class UserService {
 		return wrongMsg;
 	}
 
+	/**
+	* @Title: login  
+	* @Description: TODO(这里用一句话描述这个方法的作用)  
+	* @param @param username
+	* @param @param password
+	* @param @return    设定文件  
+	* @return Object[]   Object[0] 是message 为空表示正常.非空,其内容为登录错误报告,  如果登录成功 Object[1]是user对象, 
+	* @throws
+	 */
 	public Object[] login(String username, String password){
 		System.out.println(username+password);
 		String msg = null;
@@ -205,6 +258,14 @@ public class UserService {
 	}
 
 
+	/**
+	* @Title: hasName  
+	* @Description: TODO 验证用户名  
+	* @param @param name
+	* @param @return    设定文件  
+	* @return boolean    true : name已存在, false name不存在 
+	* @throws
+	 */
 	public boolean hasName(String name) {
 		boolean f = true;
 		try {

@@ -1,26 +1,27 @@
 package com.estore.web.servlet;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.estore.domain.OrderItem;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
 
 /**
  * 
- * 删除用户的购物车项目*/
+ * */
+/**
+ * 
+ * @ClassName: RemoveCartItemServlet 
+ * @Description: TODO 删除用户的 cart item
+ * @author: zw
+ * @date: 2018年3月26日 下午1:45:22
+ */
 public class RemoveCartItemServlet extends HttpServlet {
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

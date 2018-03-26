@@ -9,30 +9,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.estore.utils.CookieUtils;
 
+
+
 /**
- * 注销.
- * 把session和cookie中的用户信息删除掉
- * */
+ * 
+ * @ClassName: LogoutServlet 
+ * @Description: TODO 注销已登录的用户<br/>
+ * 					     删除掉session和cookie中的用户信息
+ * @author: zw
+ * @date: 2018年3月26日 下午1:31:47
+ */
 
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	HttpServletRequest request; 
-	HttpServletResponse response;
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public LogoutServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.request = request;
-		this.response = response;
 		
 		//不能直接删除session,  session里可能有其他的信息
 		request.getSession().setAttribute("user", null);;

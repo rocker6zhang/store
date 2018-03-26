@@ -12,18 +12,20 @@ import com.estore.service.UserService;
 
 /**
  * 
- * 
- * */
+ * @ClassName: SendActiveEmail 
+ * @Description: TODO 发送激活邮件,对应激活页面
+ * @author: zw
+ * @date: 2018年3月26日 下午1:38:51
+ */
 public class SendActiveEmail extends HttpServlet {
 
-	//	HttpServletRequest request; 
-	//	HttpServletResponse response;
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		UserService service = new UserService();
 		String message = null;
 
+		//获取数据
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		// 2 用户携带用户名和密码 需要发送激活邮件服务
@@ -33,7 +35,9 @@ public class SendActiveEmail extends HttpServlet {
 		User u = new User();
 		u.setUsername(username);
 		u.setPassword(password);
-		String str = u.check();//假装校验数据
+		u.setEmail("@");//U.check 会校验email
+		//校验数据
+		String str = u.check();
 		
 		if(str != null) {
 			request.setAttribute("message", str);

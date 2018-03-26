@@ -21,7 +21,13 @@ import com.estore.service.UserService;
 import com.estore.utils.MD5Utils;
 
 
-
+/**
+ * 
+ * @ClassName: LoginServlet 
+ * @Description: TODO 用户登录
+ * @author: zw
+ * @date: 2018年3月26日 下午1:33:39
+ */
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -42,8 +48,6 @@ public class LoginServlet extends HttpServlet {
 		this.request = request;
 		this.response = response;
 
-		//User uu = (User) request.getSession().getAttribute("user");
-		//System.out.println(uu);
 
 		//做参数校验
 		//封装数据
@@ -127,7 +131,7 @@ public class LoginServlet extends HttpServlet {
 		/*
 		 * 同步购物车
 		 * */
-		setCart( request,  response);
+		setCart( request);
 
 		request.setAttribute("title", "登录成功");
 		request.setAttribute("message", "登录成功,3秒后跳转到首页");
@@ -139,10 +143,16 @@ public class LoginServlet extends HttpServlet {
 
 	}
 
-	/*
-	 * user购物车, 会添加到数据库, 那么没有登录的时候的cart 会和 数据库里的cart 冲突,  需要同步
-	 * */
-	private void setCart(HttpServletRequest request2, HttpServletResponse response2) {
+	
+	/**
+	 * 
+	* @Title: setCart  
+	* @Description: TODO 同步购物车  <br/>用户的购物车,会添加到数据库. 那么没有登录的时候的cart 会和 数据库里的cart 冲突,  当用户登录的时候需要同步
+	* @param @param request2
+	* @return void 
+	* @throws
+	 */
+	private void setCart(HttpServletRequest request2) {
 		// TODO Auto-generated method stub
 		Map<Product,Integer> cart = (Map<Product,Integer>) request.getSession().getAttribute("cart");
 		User u = (User) request.getSession().getAttribute("user");
@@ -205,6 +215,7 @@ public class LoginServlet extends HttpServlet {
 		doGet(request, response);
 	}
 
+	//跳转到登录页面
 	private void jump(String wrongMessage) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//System.out.println(wrongMessage);

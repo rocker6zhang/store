@@ -18,11 +18,18 @@ import com.estore.domain.User;
 import com.estore.utils.DataSourceUtils;
 
 /**
- * 订单业务逻辑映射类
+ * 
  * 在本层要处理 事务 获取和释放数据库资源
  * 
  * */
 
+/**
+ * 
+ * @ClassName: OrderService 
+ * @Description: TODO 用业务逻辑封装的订单及购物车操作类
+ * @author: zw
+ * @date: 2018年3月26日 下午1:59:51
+ */
 public class OrderService {
 	private OrderDAO odao = new OrderDAO();
 	private ProductDAO pdao = new ProductDAO();

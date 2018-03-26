@@ -210,12 +210,67 @@ margin-left:-70.95pt;text-indent:-.05pt;background:white'><span lang=EN-US>&nbsp
 margin-left:-70.95pt;text-indent:-.05pt;background:white'><span lang=EN-US>&nbsp;&nbsp;&nbsp;
 </span></p>
 
-<h1 style='background:white'>实现细节</h1>
 
-<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
-background:white'><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><span class=MsoIntenseEmphasis><span style='font-family:宋体;mso-bidi-font-family:
-宋体'>源代码</span></span></p>
+<h1><span style='font-family:宋体'>实现</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+class=MsoIntenseEmphasis><span style='font-family:宋体'>前端</span></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:1.0cm'><span
+style='font-family:宋体'>前端页面使用</span><span lang=EN-US>JSP</span><span
+style='font-family:宋体'>动态生成</span><span lang=EN-US>, </span><span
+style='font-family:宋体'>配合</span><span lang=EN-US>JSTL</span><span
+style='font-family:宋体'>和</span><span lang=EN-US>EL</span><span
+style='font-family:宋体'>表达式完成数据填充</span><span lang=EN-US>, </span><span
+style='font-family:宋体'>页面交互由</span><span lang=EN-US>javaScript </span><span
+style='font-family:宋体'>实现</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>表单信息校验</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>页面动态调整</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>购物车数量价钱联动调整等</span><span lang=EN-US>. &nbsp;</span><span
+style='font-family:宋体'>添加购物车、购物车修改、商品修改服务器请求使用</span><span lang=EN-US>AJAX </span><span
+style='font-family:宋体'>实现</span><span lang=EN-US>. </span><em><span
+style='font-family:宋体'>首页</span></em><span style='font-family:宋体'>设计除轮播图外</span><span
+lang=EN-US>,</span><span style='font-family:宋体'>其余来自网络</span><span lang=EN-US>(</span><span
+style='font-family:宋体'>侵删</span><span lang=EN-US>)</span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:1.0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:21.0pt;text-indent:21.0pt'><span
+class=MsoIntenseEmphasis><span style='font-family:宋体'>后端</span></span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:1.0cm'><span
+style='font-family:宋体'>后端建立在</span><span lang=EN-US>tomca7.0</span><span
+style='font-family:宋体'>服务器上</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>采用</span><span lang=EN-US>MVC</span><span
+style='font-family:宋体'>三层结构</span><span lang=EN-US>. </span><span
+style='font-family:宋体'>在</span><span lang=EN-US>servlet</span><span
+style='font-family:宋体'>层封装并校验页面请求信息</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>使用</span><span lang=EN-US>xx</span><span
+style='font-family:宋体'>封装</span><span lang=EN-US>bean</span><span
+style='font-family:宋体'>数据</span><span lang=EN-US>, </span><span
+style='font-family:宋体'>传递给</span><span lang=EN-US>service</span><span
+style='font-family:宋体'>层进行业务逻辑处理</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>最后调用</span><span lang=EN-US>dao</span><span
+style='font-family:宋体'>层进行持久化</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>使用</span><span lang=EN-US>JSP</span><span
+style='font-family:宋体'>显示</span><span lang=EN-US>. </span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:1.0cm'><span
+style='font-family:宋体'>数据库使用</span><span lang=EN-US>mysql,</span><span
+style='font-family:宋体'>在</span><span lang=EN-US>product</span><span
+style='font-family:宋体'>表</span> <span lang=EN-US>name </span><span
+style='font-family:宋体'>字段上添加索引</span><span lang=EN-US>. </span><span
+style='font-family:宋体'>数据库连接池使用</span><span lang=EN-US>C3P0.</span><span
+style='font-family:宋体'>使用默认配置</span><span lang=EN-US>.</span></p>
+
+<p class=MsoNormal style='margin-left:42.5pt;text-indent:1.0cm'><span
+style='font-family:宋体'>开发环境是</span><span lang=EN-US>:windows 7 + JDK1.6 +
+eclipse2017, </span><span style='font-family:宋体'>部署到阿里云</span><span lang=EN-US>linux</span><span
+style='font-family:宋体'>服务器上面。</span></p>
+
+<h1 style='background:white'>源代码</h1>
+
 <a href="https://github.com/rocker6zhang/store">https://github.com/rocker6zhang/store</a>
 
 <h1 style='background:white'>待完善</h1>

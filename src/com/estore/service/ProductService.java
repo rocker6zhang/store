@@ -11,6 +11,13 @@ import com.estore.dao.ProductDAO;
 import com.estore.domain.Product;
 import com.estore.utils.DataSourceUtils;
 
+/**
+ * 
+ * @ClassName: ProductService 
+ * @Description: TODO 用业务逻辑封装的商品操作类
+ * @author: zw
+ * @date: 2018年3月26日 下午1:58:39
+ */
 public class ProductService {
 	private ProductDAO pdao = new ProductDAO();
 

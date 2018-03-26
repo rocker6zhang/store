@@ -7,13 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 
+ * @ClassName: PayServlet 
+ * @Description: TODO 支付
+ * @author: zw
+ * @date: 2018年3月26日 下午1:30:57
+ */
 public class PayServlet extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-		//支付
+		//确认支付
 		//nothing
 		request.setAttribute("jumpURL",request.getContextPath()+"/home");
 		request.setAttribute("title","支付完成");

@@ -26,7 +26,15 @@ import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.utils.DataSourceUtils;
 
-//Connection
+/**
+ * 
+ * @ClassName: ProductDAO 
+ * @Description: TODO 商品表的对应操作类<br/>
+ * 功能:
+ * 		提供 product的 增删改查方法
+ * @author: zw
+ * @date: 2018年3月26日 下午2:01:24
+ */
 public class ProductDAO extends DAO{
 
 	/**

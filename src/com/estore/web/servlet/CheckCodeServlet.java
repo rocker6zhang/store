@@ -16,7 +16,13 @@ import com.estore.utils.CheckCode;
 import com.estore.utils.CheckImg;
 
 
-
+/**
+ * 
+ * @ClassName: CheckCodeServlet 
+ * @Description: TODO 校验码图片控制器, 生成中位字符校验码
+ * @author: zw
+ * @date: 2018年3月26日 下午12:17:43
+ */
 public class CheckCodeServlet extends HttpServlet {
 
 	@Override 
