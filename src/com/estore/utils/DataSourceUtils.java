@@ -19,7 +19,7 @@ public class DataSourceUtils {
 	
 	static {
 		ResourceBundle r = ResourceBundle.getBundle("my");
-		try {
+		try {   
 			dataSource.setDriverClass(r.getString("JDBC_DRIVER"));
 			dataSource.setJdbcUrl(r.getString("DB_URL"));
 			dataSource.setUser(r.getString("USER"));

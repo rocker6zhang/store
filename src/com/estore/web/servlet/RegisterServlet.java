@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.beanutils.BeanUtils;
 
 import com.estore.domain.User;
-import com.estore.service.UserService;
-import com.estore.dao.UserDAO;
+import com.estore.service.UserServiceimpl;
+import com.estore.dao.UserDAOimpl;
 
 /**
  * 
@@ -73,7 +73,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		//3. 调用服务(registService)
 		
-		wrongMessage = new UserService().regist(user);
+		wrongMessage = new UserServiceimpl().regist(user);
 		//如果校验返回的结果"wrongMessage"不为null 表示有错误信息.
 		if(wrongMessage != null) {
 			wrongJump(wrongMessage);//这里跳转回注册页面

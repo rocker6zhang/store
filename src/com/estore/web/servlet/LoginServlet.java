@@ -13,11 +13,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.estore.dao.UserDAO;
+import com.estore.dao.UserDAOimpl;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
+import com.estore.service.OrderServiceimpl;
 import com.estore.service.UserService;
+import com.estore.service.UserServiceimpl;
 import com.estore.utils.MD5Utils;
 
 
@@ -77,7 +79,7 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 
-		UserService us = new UserService();
+		UserService us = new UserServiceimpl();
 
 		System.out.println("用户名"+username+"密码"+password);
 
@@ -162,7 +164,7 @@ public class LoginServlet extends HttpServlet {
 			cart = new HashMap<Product,Integer>();
 		}
 
-		OrderService os = 	new OrderService();
+		OrderService os = 	new OrderServiceimpl();
 		//db cart
 		Map<Product,Integer> dbcart = os.getCart(u);
 

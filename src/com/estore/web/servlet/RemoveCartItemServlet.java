@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.estore.domain.Product;
 import com.estore.domain.User;
-import com.estore.service.OrderService;
+import com.estore.service.OrderServiceimpl;
 
 /**
  * 
@@ -52,7 +52,7 @@ public class RemoveCartItemServlet extends HttpServlet {
 
 			//如果用户已登录,同步删除数据库数据
 			if(u != null)
-				new OrderService().removeCartItem(u.getId(),removep);
+				new OrderServiceimpl().removeCartItem(u.getId(),removep);
 		}
 
 

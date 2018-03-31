@@ -14,11 +14,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.estore.dao.ProductDAO;
+import com.estore.dao.ProductDAOimpl;
 import com.estore.domain.OrderItem;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
+import com.estore.service.OrderServiceimpl;
 
 
 /**
@@ -53,7 +54,7 @@ public class AddCartItemServlet extends HttpServlet {
 
 		Product p = null;
 		try {
-			p = new ProductDAO().getProduct(id);
+			p = new ProductDAOimpl().getProduct(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,7 +78,7 @@ public class AddCartItemServlet extends HttpServlet {
 		Integer count = cart.get(p);
 
 		//写到数据库
-		OrderService os = new OrderService();
+		OrderService os = new OrderServiceimpl();
 		
 
 		if(count == null) {

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.estore.domain.User;
 import com.estore.service.UserService;
+import com.estore.service.UserServiceimpl;
 
 /**
  * 
@@ -22,7 +23,7 @@ public class SendActiveEmail extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		UserService service = new UserService();
+		UserService service = new UserServiceimpl();
 		String message = null;
 
 		//获取数据

@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.estore.domain.OrderItem;
 import com.estore.domain.Product;
 import com.estore.service.UserService;
+import com.estore.service.UserServiceimpl;
 
 
 /**
@@ -43,7 +44,7 @@ public class CheckRenameServlet extends HttpServlet {
 		}
 
 		//调用服务
-		UserService us = new UserService();
+		UserService us = new UserServiceimpl();
 		boolean hasName = us.hasName(name);
 
 

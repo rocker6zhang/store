@@ -97,10 +97,10 @@
 			</span> 
 			<span style="position: relative; top: 25%; transform: translateY(-50%); float:neno">
 					<input id="search_input" type="text" placeholder="请输入关键字:*key*" />&nbsp;&nbsp;
-					<button  class="art-button" style=" border-color: #0084ff;background-color: #0084ff;"onclick="search1()">搜索</button>
+					<button  class="art-button" style=" border-color: #0084ff;background-color: #0084ff;" onclick="search1()">搜索</button>
 			</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 			
-			<span style="position: relative; top: 50%; transform: translateY(-50%);float:right">用户信息&nbsp;&nbsp;当前用户:
+			<span style="position: relative; top: 50%; transform: translateY(-50%);float:right">在线人数:(${online-num}) &nbsp;&nbsp;当前用户:
 				${user.username}&nbsp;&nbsp;
 				<a href="${pageContext.request.contextPath}/login.jsp">登录</a>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/logout">注销</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -422,7 +422,7 @@
 													<input type="text" value="" name="search" id="s"
 														style="width: 95%;" placeholder="请输入关键字:*key*"/> <span class="art-button-wrapper">
 														<span class="l"> </span> <span class="r"> </span> 
-														<input class="art-button" type="button" name="search" value="查询" onclick="search1()"/>
+														<input class="art-button" type="button" name="search" value="查询"  onclick="search1()"/>
 													</span>
 
 									

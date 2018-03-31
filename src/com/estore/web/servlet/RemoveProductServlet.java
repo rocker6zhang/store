@@ -27,7 +27,8 @@ import org.apache.commons.io.IOUtils;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.ProductService;
-import com.estore.service.UserService;
+import com.estore.service.ProductServiceimpl;
+import com.estore.service.UserServiceimpl;
 import com.estore.utils.PicUtils;
 import com.estore.utils.UploadUtils;
 
@@ -57,7 +58,7 @@ public class RemoveProductServlet extends HttpServlet {
 			return;
 		}
 		
-		ProductService ps = new ProductService();
+		ProductService ps = new ProductServiceimpl();
 		
 		//不开放删除功能
 //		String msg = ps.removeProduct(id,request);

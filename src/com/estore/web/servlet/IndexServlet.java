@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.estore.domain.Product;
 import com.estore.service.ProductService;
+import com.estore.service.ProductServiceimpl;
 
 
 
@@ -34,7 +35,7 @@ public class IndexServlet extends HttpServlet {
 		//如果application 域里面没有, 就读数据库,并存入application域
 		if(products == null){
 			
-			ProductService service = new ProductService();
+			ProductService service = new ProductServiceimpl();
 			products = service.getProducts(25);
 			request.getServletContext().setAttribute("products", products);
 		}

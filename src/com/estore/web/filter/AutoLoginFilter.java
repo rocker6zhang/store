@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.estore.domain.User;
 import com.estore.service.UserService;
+import com.estore.service.UserServiceimpl;
 import com.estore.utils.CookieUtils;
 
 
@@ -55,7 +56,7 @@ public class AutoLoginFilter implements Filter {
 							.split("::")[0], "utf-8");
 					String password = cookie.getValue().split("::")[1];
 
-					UserService service = new UserService();
+					UserService service = new UserServiceimpl();
 
 					User u = (User) service.login(username, password)[1];
 					

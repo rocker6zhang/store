@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,8 @@ import org.apache.commons.io.IOUtils;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.ProductService;
-import com.estore.service.UserService;
+import com.estore.service.ProductServiceimpl;
+import com.estore.service.UserServiceimpl;
 import com.estore.utils.PicUtils;
 import com.estore.utils.UploadUtils;
 
@@ -44,8 +46,10 @@ public class GetProductServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+
 		String id = request.getParameter("id");
-		ProductService service = new ProductService();
+		ProductService service = new ProductServiceimpl();
 
 		Product p = null;
 

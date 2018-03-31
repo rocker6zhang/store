@@ -15,6 +15,7 @@ import com.estore.domain.OrderItem;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
+import com.estore.service.OrderServiceimpl;
 
 /**
  * 
@@ -73,7 +74,7 @@ public class AddOrderServlet extends HttpServlet {
 		
 		o.setPrice(total_price);
 		
-		OrderService os = new OrderService();
+		OrderService os = new OrderServiceimpl();
 		message = os.addOrder(orderItems);
 		
 		if(message == null) {

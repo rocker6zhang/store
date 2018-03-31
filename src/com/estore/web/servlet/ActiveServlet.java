@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.estore.domain.User;
 import com.estore.service.UserService;
+import com.estore.service.UserServiceimpl;
 
 /**
  * 用户激活
@@ -25,7 +26,7 @@ public class ActiveServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		UserService service = new UserService();
+		UserService service = new UserServiceimpl();
 		String message = null;
 		String activeCode = request.getParameter("activeCode");
 		//用户携带验证码,需要验证服务,  

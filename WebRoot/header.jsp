@@ -16,7 +16,8 @@
 	</span>
 <!-- 右 用户 -->
 	<span style="position: relative; top: 50%; transform: translateY(-50%);float:right">
-		用户信息&nbsp;&nbsp;当前用户:
+		在线人数:(${applicationScope.online-num})&nbsp;&nbsp;当前用户:
+				
 		${user.username}&nbsp;&nbsp;
 		<a href="${pageContext.request.contextPath}/login.jsp">登录</a>&nbsp;&nbsp;
 		<a href="${pageContext.request.contextPath}/logout">注销</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

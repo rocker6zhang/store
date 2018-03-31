@@ -18,6 +18,7 @@ import com.estore.domain.OrderItem;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.OrderService;
+import com.estore.service.OrderServiceimpl;
 
 /**
  * 
@@ -45,7 +46,7 @@ public class GetOrderServlet extends HttpServlet {
 		
 		
 		//调用查询服务
-		OrderService os = new OrderService();
+		OrderService os = new OrderServiceimpl();
 		List<Order> order = os.getOrder(user);
 		  for(Order o : order) {
 		   o.setOis(os.getOrderItems(o));

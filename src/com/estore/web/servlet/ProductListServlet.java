@@ -27,7 +27,8 @@ import org.apache.commons.io.IOUtils;
 import com.estore.domain.Product;
 import com.estore.domain.User;
 import com.estore.service.ProductService;
-import com.estore.service.UserService;
+import com.estore.service.ProductServiceimpl;
+import com.estore.service.UserServiceimpl;
 import com.estore.utils.PicUtils;
 import com.estore.utils.UploadUtils;
 
@@ -46,7 +47,7 @@ public class ProductListServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		ProductService service = new ProductService();
+		ProductService service = new ProductServiceimpl();
 
 		List<Product> list;
 

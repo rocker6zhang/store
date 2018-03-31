@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.estore.domain.Product;
 import com.estore.service.ProductService;
+import com.estore.service.ProductServiceimpl;
 
 /**
  * 
@@ -34,7 +35,7 @@ public class SearchProductServlet extends HttpServlet {
 		}
 		
 		//调用服务
-		ProductService service = new ProductService();
+		ProductService service = new ProductServiceimpl();
 
 		List<Product> list = null;
 		list = service.getProductByKey(key);

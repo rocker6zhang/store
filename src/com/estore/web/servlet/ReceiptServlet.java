@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.estore.domain.OrderItem;
 import com.estore.domain.Product;
 import com.estore.service.OrderService;
+import com.estore.service.OrderServiceimpl;
 
 
 /**
@@ -42,7 +43,7 @@ public class ReceiptServlet extends HttpServlet {
 			
 		int id = Integer.parseInt(order_id);
 		
-		OrderService os = new OrderService();
+		OrderService os = new OrderServiceimpl();
 		os.receipt(id);
 		response.getWriter().print("ok");
 		return;

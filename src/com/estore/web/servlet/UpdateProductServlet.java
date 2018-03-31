@@ -11,6 +11,7 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import com.estore.domain.Product;
 import com.estore.service.ProductService;
+import com.estore.service.ProductServiceimpl;
 
 
 /**
@@ -50,7 +51,7 @@ public class UpdateProductServlet extends HttpServlet {
 		}
 
 		//调用服务
-		ProductService ps = new ProductService();
+		ProductService ps = new ProductServiceimpl();
 
 		msg = ps.updateProduct(p);
 		if(msg != null) {

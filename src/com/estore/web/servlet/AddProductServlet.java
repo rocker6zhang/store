@@ -22,6 +22,7 @@ import org.apache.commons.io.IOUtils;
 
 import com.estore.domain.Product;
 import com.estore.service.ProductService;
+import com.estore.service.ProductServiceimpl;
 import com.estore.utils.PicUtils;
 import com.estore.utils.UploadUtils;
 
@@ -158,7 +159,7 @@ public class AddProductServlet extends HttpServlet {
 
 			if(message == null) {
 				// 调用service完成添加操作
-				ProductService service = new ProductService();
+				ProductService service = new ProductServiceimpl();
 
 
 				service.addProduct(p);
