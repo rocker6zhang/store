@@ -13,7 +13,7 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!-- 访问记录 -->
+	
 	<filter>
 		<filter-name>VisitCountFilter</filter-name>
 		<filter-class>com.estore.web.filter.VisitCountFilter</filter-class>
@@ -23,7 +23,8 @@
 		<filter-name>VisitCountFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<filter>
+	
+		<filter>
 		<filter-name>AutoLoginFilter</filter-name>
 		<filter-class>com.estore.web.filter.AutoLoginFilter</filter-class>
 	</filter>
@@ -267,24 +268,10 @@
 		<url-pattern>/checkRename</url-pattern>
 	</servlet-mapping>
 	
-	
-	<!--  
+
 	<error-page>
 		<error-code>500</error-code>
 		<location>/error/500.html</location>
 	</error-page>
-	  
-	<error-page>
-		<exception-type></exception-type>
-		<location></location>
-	</error-page>
-	 -->
-	
-	
-	
-	
-	
-	
-	
 	
 </web-app>

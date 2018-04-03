@@ -39,7 +39,7 @@ public class AddProductServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		if(true)throw new RuntimeException("test");
 		String repassword = (String) request.getServletContext().getAttribute("addProduct_password");
 
 		// 用于封装所有请求参数
