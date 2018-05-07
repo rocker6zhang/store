@@ -283,7 +283,7 @@ function numberText(e) {
 		
 		<tr>
 			<td colspan="7"><font size="4" color="green">
-				<a href="/home">商品页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="${pageContext.request.contextPath }/home">商品页</a>&nbsp;&nbsp;&nbsp;&nbsp;
 				<!-- 不做商品选择,  提交订单默认是购买购物车所以商品 -->
 				<a  onclick="submit()">结算 (默认结算购物车所有商品)</a></font></td>
 		</tr>

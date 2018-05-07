@@ -68,7 +68,7 @@ function addOrder(a){
 		<c:forEach items="${cart}" var="cartItem" varStatus="st">
 			<tr>
 			
-				<td><img src="${cartItem.key.imgurl_s}" width="100px"
+				<td><img src="${pageContext.request.contextPath}/${cartItem.key.imgurl_s}" width="100px"
 					height="75px" alt="an image" class="image"
 					onclick="showProduct(${cartItem.key.id})" /></td>
 				<td >${cartItem.key.name}</td>

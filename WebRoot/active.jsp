@@ -18,7 +18,7 @@
 	<h1 style="text-align: center;">${message}</h1>
 </div>
 	
-	<form action="${pageContext.request.contextPath}/sendActiveEmail" method="post">
+	<form action="${pageContext.request.contextPath }/sendActiveEmail" method="post">
 		<table align="center">
 				<tr>
 					<td>username</td>

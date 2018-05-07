@@ -110,7 +110,7 @@ function buy(id){
 			用AJAX提交给服务器  post
 	 */
 	var request =  getXMLHttp();
-	request.open("post","${pageContext.request.contextPath}/addCartItem",true);
+	request.open("post","/store/addCartItem",true);
 	request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 
 	request.send("id="+id+"&num="+pnum);
@@ -120,7 +120,7 @@ function buy(id){
 	request.onreadystatechange = function(){
 
 		if(request.readyState == 4 && request.status == 200){
-			location.href="/order.jsp";
+			location.href="/store/order.jsp";
 
 		}
 	}

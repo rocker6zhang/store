@@ -45,7 +45,7 @@ public class UserServiceimpl implements UserService  {
 			User user = userDAO.getUserByEmail(u.getEmail());
 
 			// 是否存在 email 并且 已激活,
-			if(user != null && user.getState() == 0){
+			if(user != null && user.getState() == 1){
 				wrongMsg = "email already use!!!";
 				return wrongMsg;
 			}

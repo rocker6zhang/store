@@ -76,7 +76,7 @@
 
 	<div id="all">
 <%-- action='${PageContext.request.getContextPath}/regist'总是编译错,  所以这里写死 --%>
-		<form action="${PageContext.request.getContextPath}/regist"
+		<form action="/store/regist"
 			method="post" onsubmit="return checkForm();">
 			<table align="center">
 				

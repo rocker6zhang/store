@@ -61,7 +61,7 @@
 
 	<div id="all">
 
-		<form action="${PageContext.request.getContextPath}/login" method="post" onsubmit="return checkForm();">
+		<form action="/store/login" method="post" onsubmit="return checkForm();">
 			<table align="center">
 				<tr>
 					<td>username</td>

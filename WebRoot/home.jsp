@@ -230,7 +230,7 @@
 																	onclick="showProduct(${p.id})" />
 																<p>价格: ￥${p.price}</p>
 																<p>
-																	<a href="/showProduct?id=${p.id}">速速抢购</a>
+																	<a href="${pageContext.request.contextPath}/showProduct?id=${p.id}">速速抢购</a>
 																</p>
 															</div>
 														</div>

@@ -171,7 +171,7 @@ public class ProductDAOimpl extends DAO implements ProductDAO{
 			stat.setInt(2,p.getId());
 			stat.setInt(3,i);
 			if(stat.executeUpdate() == 0){
-				throw new SQLException("update 跟新失败");
+				throw new SQLException("update 更新失败,sql语句影响了0行,可能是库存不足");
 			}
 
 		}catch(SQLException e) {
